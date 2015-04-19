@@ -10,7 +10,7 @@ main(int argc, char** argv)
   RecorderManager manager;
 
   std::cout << "Spinning" << std::endl;
-  ros::MultiThreadedSpinner spinner(4);
+  ros::MultiThreadedSpinner spinner(8);
   spinner.spin();
 
   return 0;

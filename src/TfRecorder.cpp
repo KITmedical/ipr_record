@@ -13,6 +13,8 @@ TfRecorder::TfRecorder(const std::string& childFrame, const std::string& parentF
    m_parentFrame(parentFrame)
 {
   ROS_INFO_STREAM("Creating TF recorder for parent frame " << parentFrame << " and child frame " << childFrame);
+
+  ROS_ERROR_STREAM("TODO");
 }
 /*------------------------------------------------------------------------}}}-*/
 

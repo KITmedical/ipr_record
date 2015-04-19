@@ -17,6 +17,7 @@ class Recorder
 {
   public:
     // enums
+    enum Options { NONE = 0x0, ONCE = 0x01 };
 
     // typedefs
 
@@ -50,6 +51,7 @@ class Recorder
     bool m_recordingActive;
     std::string m_outputDir;
     std::string m_outputSubdir;
+    unsigned m_recordCount;
 
 
   private:
