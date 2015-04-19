@@ -1,0 +1,6 @@
+# '/' in topic and type names must be replaced by '!'
+# for topics: "sometopic": "topictype"
+# for tf: "childframe": "TF parentframe"
+recordings:
+ "!cameras!endoscope!image_raw": "sensor_msgs!Image"
+ "endoscope": "TF viky_trocar"

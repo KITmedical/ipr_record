@@ -1,0 +1,7 @@
+<launch>
+  <arg name="suffix" default="camera_guidance" />
+
+  <rosparam ns="/record_$(arg suffix)" command="load" file="$(find ipr_record)/launch/record_camera_guidance.yaml" />
+  <node name="record_$(arg suffix)" pkg="ipr_record" type="ipr_record_node" output="screen">
+  </node>
+</launch>
