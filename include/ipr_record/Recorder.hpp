@@ -24,13 +24,20 @@ class Recorder
  
     // static utility functions
     static std::shared_ptr<Recorder> create(const std::string& name, const std::string& type);
+    static std::string timeString(const ros::Time& rosTime);
+    static bool dirExists(const std::string& path);
+    static bool createDir(const std::string& path);
 
 
     // constructors
+    Recorder();
 
     // overwritten methods
 
     // methods
+    void setOutputDir(const std::string& outputDir);
+    void startRecording();
+    void stopRecording();
 
     // variables
 
@@ -39,6 +46,10 @@ class Recorder
     // methods
 
     // variables
+    ros::NodeHandle m_node;
+    bool m_recordingActive;
+    std::string m_outputDir;
+    std::string m_outputSubdir;
 
 
   private:

@@ -8,10 +8,16 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   ahbstring
   ahbros
+  sensor_msgs
+  cv_bridge
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
+
+# force OpenCV 2
+find_package(OpenCV 2 REQUIRED)
+set(ENV{CPATH} "/opt/ros/indigo/include")
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -121,6 +127,8 @@ add_executable(ipr_record_node
 ## Specify libraries to link a library or executable target against
 target_link_libraries(ipr_record_node
   ${catkin_LIBRARIES}
+  opencv_core
+  opencv_highgui
 )
 
 #############

@@ -4,6 +4,7 @@
 // system includes
 
 // library includes
+#include <sensor_msgs/Image.h>
 
 // custom includes
 #include "Recorder.hpp"
@@ -37,8 +38,12 @@ class TopicRecorder
 
   protected:
     // methods
+    void topicCallback(const sensor_msgs::Image::ConstPtr& imgMsg);
 
     // variables
+    std::string m_topicName;
+    std::string m_topicType;
+    ros::Subscriber m_sub;
 
 
   private:
