@@ -16,7 +16,13 @@ std::shared_ptr<Recorder>
 Recorder::create(const std::string& name, const std::string& type)
 {
   if (ahb::string::startswith(type, "TF ")) {
-    return std::make_shared<TfRecorder>(name, type.substr(3));
+    std::string tfdummy;
+    double hz;
+    std::string realtype;
+    std::stringstream ss;
+    ss << type;
+    ss >> tfdummy >> hz >> realtype;
+    return std::make_shared<TfRecorder>(name, realtype, hz);
   } else {
     if (ahb::string::startswith(type, "ONCE ")) {
       return std::make_shared<TopicRecorder>(name, type.substr(5), Recorder::Options::ONCE);

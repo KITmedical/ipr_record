@@ -10,6 +10,7 @@
 #include <trocar2cartesian_msgs/TrocarPose.h>
 #include <sensor_msgs/CameraInfo.h>
 #include <camera_guidance_msgs/Mode.h>
+#include <std_msgs/String.h>
 
 // custom includes
 #include "Recorder.hpp"

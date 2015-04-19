@@ -30,6 +30,8 @@ TopicRecorder::TopicRecorder(const std::string& topicName, const std::string& to
     m_sub = m_node.subscribe<sensor_msgs::CameraInfo>(m_topicName, 1, &TopicRecorder::yamlStampedTopicCallback<sensor_msgs::CameraInfo>, this);
   } else if (m_topicType == "camera_guidance_msgs/Mode") {
     m_sub = m_node.subscribe<camera_guidance_msgs::Mode>(m_topicName, 1, &TopicRecorder::yamlTopicCallback<camera_guidance_msgs::Mode>, this);
+  } else if (m_topicType == "std_msgs/String") {
+    m_sub = m_node.subscribe<std_msgs::String>(m_topicName, 1, &TopicRecorder::yamlTopicCallback<std_msgs::String>, this);
   } else {
     ROS_ERROR_STREAM("Unsupported topic type: " << m_topicType);
   }

@@ -1,13 +1,14 @@
 # '/' in topic and type names must be replaced by '!'
 # for topics: "sometopic": "topictype"
 #   if only a single message should be recorded use "ONCE topictype"
-# for tf: "childframe": "TF parentframe"
-output_dir: "/tmp/rec"
+# for tf: "childframe": "TF hz parentframe"
+output_dir: "/expdata/2015-04-21/test"
 recordings:
  "!cameras!endoscope!image_raw": "sensor_msgs!Image"
  "!cameras!endoscope!camera_info": "ONCE sensor_msgs!CameraInfo"
  "!art!body16!tip": "geometry_msgs!Vector3"
  "!art!body9!tip": "geometry_msgs!Vector3"
  "!robots!viky!get_trocar": "trocar2cartesian_msgs!TrocarPose"
- "endoscope": "TF viky_trocar" # TODO, period
+ "endoscope": "TF 30 viky_trocar"
  "!camera_guidance!get_mode": "camera_guidance_msgs!Mode"
+ "!camera_guidance!get_phase": "std_msgs!String"

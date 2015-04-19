@@ -2,8 +2,10 @@
 #define _TF_RECORDER_H_
 
 // system includes
+#include <thread>
 
 // library includes
+#include <tf/transform_listener.h>
 
 // custom includes
 #include "Recorder.hpp"
@@ -26,7 +28,7 @@ class TfRecorder
 
 
     // constructors
-    TfRecorder(const std::string& childFrame, const std::string& parentFrame);
+    TfRecorder(const std::string& childFrame, const std::string& parentFrame, double hz);
 
     // overwritten methods
 
@@ -37,10 +39,14 @@ class TfRecorder
 
   protected:
     // methods
+    void readTfLoop();
 
     // variables
     std::string m_childFrame;
     std::string m_parentFrame;
+    double m_hz;
+    tf::TransformListener m_tfListener;
+    std::thread m_tfThread;
 
 
   private:

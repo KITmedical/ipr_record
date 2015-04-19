@@ -10,6 +10,7 @@ find_package(catkin REQUIRED COMPONENTS
   ahbros
   sensor_msgs
   cv_bridge
+  tf
 )
 
 ## System dependencies are found with CMake's conventions
