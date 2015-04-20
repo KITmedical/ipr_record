@@ -11,6 +11,7 @@ recordings:
  "!art!body9!tip": "geometry_msgs!Vector3"
  "!art!body16!tip": "geometry_msgs!Vector3"
  "!robots!viky!get_trocar": "trocar2cartesian_msgs!TrocarPose"
+ "viky_trocar": "TF 1 art"
  "endoscope": "TF 30 viky_trocar"
  "!camera_guidance!get_mode": "camera_guidance_msgs!Mode"
  "!camera_guidance!get_phase": "std_msgs!String"
