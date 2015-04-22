@@ -2,7 +2,7 @@
 # for topics: "sometopic": "topictype"
 #   if only a single message should be recorded use "ONCE topictype"
 # for tf: "childframe": "TF hz parentframe"
-output_dir: "/expdata/2015-04-21/01"
+output_dir: "/expdata/2015-04-22/02"
 recordings:
  "!cameras!endoscope!image_raw": "sensor_msgs!Image"
  "!cameras!endoscope!camera_info": "ONCE sensor_msgs!CameraInfo"
