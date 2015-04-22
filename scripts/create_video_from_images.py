@@ -43,8 +43,8 @@ def create_video(imagedir, images, durations, outputfile):
   concat_input_file.close()
 
   subprocess.call("ffmpeg -f concat -i %s %s %s" % (concat_input_filename, video_encoding, outputfile), shell=True)
-  video_duration=subprocess.check_output("ffprobe -i %s -show_format -v quiet | sed -n 's/duration=//p'" % outputfile, shell=True)
-  print('Duration of encoded video: %s' % video_duration)
+  video_duration=float(subprocess.check_output("ffprobe -i %s -show_format -v quiet | sed -n 's/duration=//p'" % outputfile, shell=True))
+  print('Duration of encoded video: %s' % datetime.timedelta(seconds=video_duration))
   
 
 def main():
