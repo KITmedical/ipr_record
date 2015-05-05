@@ -4,22 +4,25 @@
 # for tf: "childframe": "TF hz parentframe"
 output_dir: "/expdata/2015-04-22/02"
 recordings:
- "!cameras!endoscope!image_raw": "sensor_msgs!Image"
- "!cameras!endoscope!camera_info": "ONCE sensor_msgs!CameraInfo"
- "!art!body6!tip": "geometry_msgs!Vector3"
- "!art!body7!tip": "geometry_msgs!Vector3"
- "!art!body9!tip": "geometry_msgs!Vector3"
- "!art!body16!tip": "geometry_msgs!Vector3"
- "!robots!viky!get_trocar": "trocar2cartesian_msgs!TrocarPose"
- "viky_trocar": "TF 1 art"
- "endoscope": "TF 30 viky_trocar"
- "patient_mesh": "TF 1 viky_trocar"
- "!camera_guidance!get_mode": "camera_guidance_msgs!Mode"
- "!camera_guidance!get_phase": "std_msgs!String"
- "!art!body11!pose": "geometry_msgs!PoseStamped"
- "!art!body13!pose": "geometry_msgs!PoseStamped"
+ "!cameras!endoscope!image_raw": "sensor_msgs!Image" # Endoscope video
+ "!cameras!endoscope!camera_info": "ONCE sensor_msgs!CameraInfo" # Endoscope calibration
+ "!art!body6!tip": "geometry_msgs!Vector3" # Schere tip
+ "!art!body7!tip": "geometry_msgs!Vector3" # ZangeOP tip
+ "!art!body9!tip": "geometry_msgs!Vector3" # ZangeOP2 tip
+ "!art!body16!tip": "geometry_msgs!Vector3" # Clipper tip
+ "!robots!viky!get_trocar": "trocar2cartesian_msgs!TrocarPose" # Robot trocar position
+ "!robots!viky!set_trocar": "trocar2cartesian_msgs!TrocarPose" # Robot move commands
+ "viky_trocar": "TF 1 art" # Trocar position to ART
+ "endoscope": "TF 30 viky_trocar" # Endoscope tip
+ "patient_mesh": "TF 1 viky_trocar" # OpenHelp position to trocar
+ "!camera_guidance!get_mode": "camera_guidance_msgs!Mode" # Endoscope guidance mode
+ "!camera_guidance!get_phase": "std_msgs!String" # Surgical step
+ "!art!body11!pose": "geometry_msgs!PoseStamped" # Surgeon shoulder1
+ "!art!body13!pose": "geometry_msgs!PoseStamped" # Surgeon shoulder2
 
- "!art!body6!pose": "geometry_msgs!PoseStamped"
- "!art!body7!pose": "geometry_msgs!PoseStamped"
- "!art!body9!pose": "geometry_msgs!PoseStamped"
- "!art!body16!pose": "geometry_msgs!PoseStamped"
+ "!art!body6!pose": "geometry_msgs!PoseStamped" # Schere tracker, approx handle
+ "!art!body7!pose": "geometry_msgs!PoseStamped" # ZangeOP tracker, approx handle
+ "!art!body9!pose": "geometry_msgs!PoseStamped" # ZangeOP2 tracker, approx handle
+ "!art!body16!pose": "geometry_msgs!PoseStamped" # Clipper tracker, approx handle
+
+# TODO "!robots!lwr2!get_joint": "sensor_msgs!JointState" # Robot joint position
