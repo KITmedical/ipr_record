@@ -59,7 +59,7 @@ def main():
   timestamps_delta = [t2 - t1 for (t1,t2) in zip(timestamps, timestamps[1:])]
   analyze_timestamps(timestamps, timestamps_delta)
   #plot_timestamps(timestamps, timestamps_delta)
-  create_video(args.dir, images, timestamps_delta, args.videofile)
+  create_video(os.path.abspath(args.dir), images, timestamps_delta, args.videofile)
 
 
 if __name__ == '__main__':

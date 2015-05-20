@@ -12,6 +12,7 @@
 #include <camera_guidance_msgs/Mode.h>
 #include <std_msgs/String.h>
 #include <geometry_msgs/PoseStamped.h>
+#include <sensor_msgs/JointState.h>
 
 // custom includes
 #include "Recorder.hpp"

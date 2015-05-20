@@ -2,7 +2,7 @@
 # for topics: "sometopic": "topictype"
 #   if only a single message should be recorded use "ONCE topictype"
 # for tf: "childframe": "TF hz parentframe"
-output_dir: "/expdata/2015-04-22/02"
+output_dir: "/expdata2/2015-05-28/10"
 recordings:
  "!cameras!endoscope!image_raw": "sensor_msgs!Image" # Endoscope video
  "!cameras!endoscope!camera_info": "ONCE sensor_msgs!CameraInfo" # Endoscope calibration
@@ -10,19 +10,26 @@ recordings:
  "!art!body7!tip": "geometry_msgs!Vector3" # ZangeOP tip
  "!art!body9!tip": "geometry_msgs!Vector3" # ZangeOP2 tip
  "!art!body16!tip": "geometry_msgs!Vector3" # Clipper tip
- "!robots!viky!get_trocar": "trocar2cartesian_msgs!TrocarPose" # Robot trocar position
- "!robots!viky!set_trocar": "trocar2cartesian_msgs!TrocarPose" # Robot move commands
- "viky_trocar": "TF 1 art" # Trocar position to ART
- "endoscope": "TF 30 viky_trocar" # Endoscope tip
- "patient_mesh": "TF 1 viky_trocar" # OpenHelp position to trocar
+ "!robots!lwr2!get_trocar": "trocar2cartesian_msgs!TrocarPose" # Robot trocar position
+ "!robots!lwr2!set_trocar": "trocar2cartesian_msgs!TrocarPose" # Robot move commands
+ "lwr2_trocar": "TF 1 art" # Trocar position to ART
+ "endoscope": "TF 30 art" # Endoscope tip (NOTE: used to be lwr2_trocar->endoscope)
+ "patient_mesh": "TF 1 lwr2_trocar" # OpenHelp position to trocar
  "!camera_guidance!get_mode": "camera_guidance_msgs!Mode" # Endoscope guidance mode
  "!camera_guidance!get_phase": "std_msgs!String" # Surgical step
- "!art!body11!pose": "geometry_msgs!PoseStamped" # Surgeon shoulder1
- "!art!body13!pose": "geometry_msgs!PoseStamped" # Surgeon shoulder2
+ "!art!body11!pose": "geometry_msgs!PoseStamped" # Endoscope camera
+ "!art!body13!pose": "geometry_msgs!PoseStamped" # Surgeon mouth
 
  "!art!body6!pose": "geometry_msgs!PoseStamped" # Schere tracker, approx handle
  "!art!body7!pose": "geometry_msgs!PoseStamped" # ZangeOP tracker, approx handle
  "!art!body9!pose": "geometry_msgs!PoseStamped" # ZangeOP2 tracker, approx handle
  "!art!body16!pose": "geometry_msgs!PoseStamped" # Clipper tracker, approx handle
 
-# TODO "!robots!lwr2!get_joint": "sensor_msgs!JointState" # Robot joint position
+ "!camera_guidance!best_global": "trocar2cartesian_msgs!TrocarPose" # best global endoscope trocar position
+ "!camera_guidance!best_local": "trocar2cartesian_msgs!TrocarPose" # best local endoscope trocar position
+ "!camera_guidance!best_combined": "trocar2cartesian_msgs!TrocarPose" # best combined endoscope trocar position
+
+ "!annotations!camera_quality": "std_msgs!String" # Live camera quality annotation (e.g. from cosaweb/camquality)
+ "!speech_command": "std_msgs!String" # Speech commands
+
+ "!robots!lwr2!get_joint": "sensor_msgs!JointState" # Robot joint position
