@@ -2,7 +2,7 @@
 # for topics: "sometopic": "topictype"
 #   if only a single message should be recorded use "ONCE topictype"
 # for tf: "childframe": "TF hz parentframe"
-output_dir: "/expdata2/2015-05-28/10"
+output_dir: "/expdata2/2015-05-28/15"
 recordings:
  "!cameras!endoscope!image_raw": "sensor_msgs!Image" # Endoscope video
  "!cameras!endoscope!camera_info": "ONCE sensor_msgs!CameraInfo" # Endoscope calibration
@@ -30,6 +30,7 @@ recordings:
  "!camera_guidance!best_combined": "trocar2cartesian_msgs!TrocarPose" # best combined endoscope trocar position
 
  "!annotations!camera_quality": "std_msgs!String" # Live camera quality annotation (e.g. from cosaweb/camquality)
+ "!annotations!part_of_surgery": "std_msgs!String" # Live part of surgery annotation (e.g. from cosaweb/camquality)
  "!speech_command": "std_msgs!String" # Speech commands
 
  "!robots!lwr2!get_joint": "sensor_msgs!JointState" # Robot joint position
