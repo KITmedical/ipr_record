@@ -11,14 +11,14 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   cv_bridge
   tf
+  trocar2cartesian_msgs
+  camera_guidance_msgs
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
-# force OpenCV 2
-find_package(OpenCV 2 REQUIRED)
-set(ENV{CPATH} "/opt/ros/indigo/include")
+find_package(OpenCV REQUIRED)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures

@@ -33,11 +33,15 @@
   <build_depend>ahbstring</build_depend>
   <build_depend>sensor_msgs</build_depend>
   <build_depend>cv_bridge</build_depend>
+  <build_depend>trocar2cartesian_msgs</build_depend>
+  <build_depend>camera_guidance_msgs</build_depend>
   <run_depend>roscpp</run_depend>
   <run_depend>ahbros</run_depend>
   <run_depend>ahbstring</run_depend>
   <run_depend>sensor_msgs</run_depend>
   <run_depend>cv_bridge</run_depend>
+  <run_depend>trocar2cartesian_msgs</run_depend>
+  <run_depend>camera_guidance_msgs</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
